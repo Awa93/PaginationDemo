@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.example.movieapp.data.Movie"/>
+        <variable
+            name="movie"
+            type="Movie" />
+    </data>
+
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    app:cardElevation="4dp">
+    <RelativeLayout
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:id="@+id/imgMovie"
+            android:src="@color/purple_200"
+            app:load="@{movie.poster}"
+            android:contentDescription="Poster Image"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textMovieName"
+            android:layout_below="@+id/imgMovie"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@{movie.title}"
+            tools:text="Avenger End Game"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textMovieYear"
+            android:layout_below="@+id/textMovieName"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:textSize="16sp"
+            android:text="@{movie.year}"
+            tools:text="2020"/>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+</layout>
